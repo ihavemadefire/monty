@@ -9,6 +9,7 @@
 int main(int argc, char *argv[])
 {
 	bringoutyourdead(argc);
+	spam(argv[1]);
 	printf("%s\n", argv[1]);
-	return(0);
+	return(EXIT_SUCCESS);
 }
