@@ -8,8 +8,10 @@
 
 int main(int argc, char *argv[])
 {
+	g_head = NULL;
+
+	printf("Main function");
 	bringoutyourdead(argc);
-	spam(argv[1]);
-	printf("%s\n", argv[1]);
+	spam(argv[1], g_head);
 	return(EXIT_SUCCESS);
 }
