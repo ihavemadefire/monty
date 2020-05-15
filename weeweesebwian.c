@@ -10,7 +10,8 @@ void weeweesebwian(stack_t *head)
 	while (head != NULL)
 	{
 		temp = head;
-		free(temp);
 		head = head->next;
+		printf("inside free all %p\n", (void *)temp);
+		free(temp);
 	}
 }

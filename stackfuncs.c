@@ -38,10 +38,6 @@ void pall(stack_t **head, __attribute__((unused))unsigned int i)
 	stack_t *new;
 
 	new = *head;
-	if (head == NULL)
-	{
-		fprintf(stderr, "L%u: can't pint, stack empty\n", i);
-	}
 	while (new != NULL)
 	{
 		printf("%d\n", new->n);
@@ -77,20 +73,24 @@ void pop(stack_t **head, unsigned int i)
 {
 	stack_t *new;
 
-	new = *head;
-	if ((*head) == NULL)
+	if (head == NULL || *head == NULL)
 	{
 		fprintf(stderr, "L%u: can't pop an empty stack\n", i);
 		exit(EXIT_FAILURE);
 	}
-	if (new->next == NULL)
+	new = *head;
+	/*If list len > 1*/
+	if (new->next != NULL)
 	{
+		*head = (*head)->next;
+		(*head)->prev = NULL;
+		printf("%p\n",(void *)new);
 		free(new);
 	}
+	/**/
 	else
 	{
-		*head = new->next;
-		new->next->prev = NULL;
+		printf("%p\n", (void *)new);
 		free(new);
 	}
 }

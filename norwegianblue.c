@@ -25,9 +25,10 @@ void spam(char *its, stack_t **head)
 		opr = strtok(buff, " ");
 		if (opr)
 		{
-			if (strcmp(opr, "push") == 0)
+		        if (strcmp(opr, "push") == 0)
 			{
 				num = strtok(NULL, " ");
+				/*validate not null and is int*/
 				remove_endOfLine(num);
 				numint = atoi(num);
 				push(head, numint);
@@ -69,7 +70,6 @@ void get_command(stack_t **head, char *opr, unsigned int i)
 		}
 		j++;
 	}
-
 }
 /**
  * remove_endOfLine - changes ending '\n' to '\0'
