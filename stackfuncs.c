@@ -84,13 +84,12 @@ void pop(stack_t **head, unsigned int i)
 	{
 		*head = (*head)->next;
 		(*head)->prev = NULL;
-		printf("%p\n",(void *)new);
 		free(new);
 	}
 	/**/
 	else
 	{
-		printf("%p\n", (void *)new);
+		*head = NULL;
 		free(new);
 	}
 }
