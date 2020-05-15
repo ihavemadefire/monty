@@ -25,7 +25,7 @@ void spam(char *its, stack_t **head)
 		opr = strtok(buff, " ");
 		if (opr)
 		{
-		        if (strcmp(opr, "push") == 0)
+			if (strcmp(opr, "push") == 0)
 			{
 				num = strtok(NULL, " ");
 				/*validate not null and is int*/
