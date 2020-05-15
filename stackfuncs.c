@@ -94,6 +94,11 @@ void pop(stack_t **head, unsigned int i)
 		free(new);
 	}
 }
+/**
+ * swap - prints list
+ * @head: head of list
+ * @i: passed int
+ */
 void swap(stack_t **head, unsigned int i)
 {
 	stack_t *new;

@@ -1,7 +1,7 @@
 #include "monty.h"
 /**
  * weeweesebwian - Frees list at end of function
- * @g_head: passed head
+ * @head: passed head
  */
 void weeweesebwian(stack_t *head)
 {
