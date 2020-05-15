@@ -41,4 +41,8 @@ void pall(stack_t **head, unsigned int i);
 void pint(stack_t **head, unsigned int i);
 void remove_endOfLine(char *line);
 void pop(stack_t **head, unsigned int i);
+void swap(stack_t **head, unsigned int i);
+void add(stack_t **head, unsigned int i);
+void nop(stack_t **head, unsigned int i);
+void weeweesebwian(stack_t *head);
 #endif

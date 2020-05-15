@@ -9,7 +9,7 @@ void push(stack_t **head, int i)
 	stack_t *new;
 	int n = i;
 
-	new = malloc(sizeof(stack_t *));
+	new = (stack_t *)malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed");
@@ -38,7 +38,7 @@ void pall(stack_t **head, __attribute__((unused))unsigned int i)
 	stack_t *new;
 
 	new = *head;
-	if (new == NULL)
+	if (head == NULL)
 	{
 		fprintf(stderr, "L%u: can't pint, stack empty", i);
 	}
@@ -78,7 +78,7 @@ void pop(stack_t **head, unsigned int i)
 	stack_t *new;
 
 	new = *head;
-	if (new == NULL)
+	if ((*head) == NULL)
 	{
 		fprintf(stderr, "L%u: can't pop an empty stack", i);
 		exit(EXIT_FAILURE);
@@ -93,4 +93,19 @@ void pop(stack_t **head, unsigned int i)
 		new->next->prev = NULL;
 		free(new);
 	}
+}
+void swap(stack_t **head, unsigned int i)
+{
+	stack_t *new;
+	int temp;
+
+	new = *head;
+	if (new->next == NULL || new->next->next == NULL)
+	{
+		fprintf(stderr, "L%u: can't swap, stack too short", i);
+		exit(EXIT_FAILURE);
+	}
+	temp = new->n;
+	new->n = new->next->n;
+	new->next->n = temp;
 }

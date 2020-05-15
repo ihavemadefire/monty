@@ -15,5 +15,6 @@ int main(int argc, char *argv[])
 	g_head = NULL;
 	bringoutyourdead(argc);
 	spam(argv[1], &g_head);
+	weeweesebwian(g_head);
 	return (EXIT_SUCCESS);
 }
