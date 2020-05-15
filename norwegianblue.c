@@ -16,7 +16,7 @@ void spam(char *its, stack_t **head)
 
 	if (fp == NULL)
 	{
-		fprintf(stderr, "Error: Can't open file %s", its);
+		fprintf(stderr, "Error: Can't open file %s\n", its);
 		exit(EXIT_FAILURE);
 	}
 	/*after opening this loop iterates and reads each line*/

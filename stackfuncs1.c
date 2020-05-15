@@ -12,7 +12,7 @@ void add(stack_t **head, unsigned int i)
 	new = *head;
 	if (new->next == NULL || new->next->next == NULL)
 	{
-		fprintf(stderr, "L%u: can't swap, stack too short", i);
+		fprintf(stderr, "L%u: can't swap, stack too short\n", i);
 		exit(EXIT_FAILURE);
 	}
 	temp = new->n;

@@ -12,7 +12,7 @@ void push(stack_t **head, int i)
 	new = (stack_t *)malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
-		fprintf(stderr, "Error: malloc failed");
+		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 	new->prev = NULL;
@@ -40,7 +40,7 @@ void pall(stack_t **head, __attribute__((unused))unsigned int i)
 	new = *head;
 	if (head == NULL)
 	{
-		fprintf(stderr, "L%u: can't pint, stack empty", i);
+		fprintf(stderr, "L%u: can't pint, stack empty\n", i);
 	}
 	while (new != NULL)
 	{
@@ -59,7 +59,7 @@ void pint(stack_t **head, unsigned int i)
 
 	if (*head == NULL)
 	{
-		fprintf(stderr, "L%u: can't pint, stack empty", i);
+		fprintf(stderr, "L%u: can't pint, stack empty\n", i);
 		exit(EXIT_FAILURE);
 	}
 	new = *head;
@@ -80,7 +80,7 @@ void pop(stack_t **head, unsigned int i)
 	new = *head;
 	if ((*head) == NULL)
 	{
-		fprintf(stderr, "L%u: can't pop an empty stack", i);
+		fprintf(stderr, "L%u: can't pop an empty stack\n", i);
 		exit(EXIT_FAILURE);
 	}
 	if (new->next == NULL)
@@ -107,7 +107,7 @@ void swap(stack_t **head, unsigned int i)
 	new = *head;
 	if (new->next == NULL || new->next->next == NULL)
 	{
-		fprintf(stderr, "L%u: can't swap, stack too short", i);
+		fprintf(stderr, "L%u: can't swap, stack too short\n", i);
 		exit(EXIT_FAILURE);
 	}
 	temp = new->n;
