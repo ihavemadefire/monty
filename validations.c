@@ -7,7 +7,7 @@ void bringoutyourdead(int c)
 {
 	if (c != 2)
 	{
-		fprintf( stderr, "USAGE: monty file\n");
+		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 }

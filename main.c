@@ -1,4 +1,6 @@
 #include "monty.h"
+
+
 /**
  * main - This funciton is a basic monty bytecode interpreter
  * @argc: number of passed arguments; should be 1
@@ -8,10 +10,10 @@
 
 int main(int argc, char *argv[])
 {
-	g_head = NULL;
+	stack_t *g_head;
 
-	printf("Main function");
+	g_head = NULL;
 	bringoutyourdead(argc);
-	spam(argv[1], g_head);
-	return(EXIT_SUCCESS);
+	spam(argv[1], &g_head);
+	return (EXIT_SUCCESS);
 }

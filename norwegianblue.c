@@ -1,6 +1,7 @@
 #include "monty.h"
 /**
  * spam - reads in file line by ine
+ * @head: list head
  * @its: file name as pased from main
  * Return Char painter to op token
  */
@@ -9,6 +10,8 @@ void spam(char *its, stack_t **head)
 	FILE *fp = fopen(its, "r");
 	char buff[128];
 	char *opr;
+	char *num;
+	int numint;
 	unsigned int i = 1;
 
 	if (fp == NULL)
@@ -22,26 +25,39 @@ void spam(char *its, stack_t **head)
 		opr = strtok(buff, " ");
 		if (opr)
 		{
-			if (strcmp(opr, "pall") == 10)
-			    remove_endOfLine(opr);
-			get_command(head, opr, i);
+			if (strcmp(opr, "push") == 0)
+			{
+				num = strtok(NULL, " ");
+				remove_endOfLine(num);
+				numint = atoi(num);
+				push(head, numint);
+			}
+			else
+			{
+				remove_endOfLine(opr);
+				get_command(head, opr, i);
+			}
 		}
 		i++;
 	}
 	fclose(fp);
 }
 /**
- * head notes for later
+ * get_command - bounces line parse off of struct
+ * @i: payload
+ * @opr: parsed operator name
+ * @head: head pointer
  */
 void get_command(stack_t **head, char *opr, unsigned int i)
 {
 	int j = 0;
 	instruction_t fd[] = {
+		{"pint", pint},
 		{"pall", pall},
-		{"push", push},
+		{"pop", pop},
 		{NULL, NULL}
 	};
-        while (fd[j].opcode != NULL)
+	while (fd[j].opcode != NULL)
 	{
 		if (strcmp(opr, fd[j].opcode) == 0)
 		{

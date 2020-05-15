@@ -32,11 +32,13 @@ typedef struct instruction_s
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-stack_t **g_head;
+
 void bringoutyourdead(int c);
 void spam(char* its, stack_t **head);
 void get_command(stack_t **head, char *opr, unsigned int i);
-void push(stack_t **head, unsigned int i);
+void push(stack_t **head, int i);
 void pall(stack_t **head, unsigned int i);
+void pint(stack_t **head, unsigned int i);
 void remove_endOfLine(char *line);
+void pop(stack_t **head, unsigned int i);
 #endif
