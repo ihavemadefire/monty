@@ -11,7 +11,7 @@ void dive(stack_t **head, unsigned int i)
 
 	if (*head == NULL || (*head)->next == NULL)
 	{
-		fprintf(stderr, "L%u: can't add, stack too short\n", i);
+		fprintf(stderr, "L%u: can't div, stack too short\n", i);
 		exit(EXIT_FAILURE);
 	}
 	new = *head;
