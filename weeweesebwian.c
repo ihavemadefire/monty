@@ -11,7 +11,6 @@ void weeweesebwian(stack_t *head)
 	{
 		temp = head;
 		head = head->next;
-		printf("inside free all %p\n", (void *)temp);
 		free(temp);
 	}
 }

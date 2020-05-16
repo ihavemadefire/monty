@@ -29,6 +29,11 @@ void spam(char *its, stack_t **head)
 			{
 				num = strtok(NULL, " ");
 				/*validate not null and is int*/
+				if (num[0] == 10)
+				{
+					prterr1(i);
+				}
+				camelot(num, i);
 				remove_endOfLine(num);
 				numint = atoi(num);
 				push(head, numint);
@@ -70,6 +75,8 @@ void get_command(stack_t **head, char *opr, unsigned int i)
 		}
 		j++;
 	}
+	fprintf(stderr, "L%u: unknown instruction %s\n", i, opr);
+	exit(EXIT_FAILURE);
 }
 /**
  * remove_endOfLine - changes ending '\n' to '\0'

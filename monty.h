@@ -45,4 +45,6 @@ void swap(stack_t **head, unsigned int i);
 void add(stack_t **head, unsigned int i);
 void nop(stack_t **head, unsigned int i);
 void weeweesebwian(stack_t *h);
+void prterr1(unsigned int i);
+void camelot(char *str, unsigned int i);
 #endif
