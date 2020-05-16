@@ -9,18 +9,16 @@ void add(stack_t **head, unsigned int i)
 	stack_t *new;
 	int temp;
 
-	new = *head;
-	if (new->next == NULL || new->next->next == NULL)
+	if (*head == NULL || (*head)->next == NULL)
 	{
-		fprintf(stderr, "L%u: can't swap, stack too short\n", i);
+		fprintf(stderr, "L%u: can't add, stack too short\n", i);
 		exit(EXIT_FAILURE);
 	}
-	temp = new->n;
-	new->next->prev = NULL;
-	*head = new->next;
-	free(new);
 	new = *head;
-	new->n = new->n + temp;
+	temp = new->n + new->next->n;
+	pop(head, i);
+	new = *head;
+	new->n = temp;
 
 }
 /**
