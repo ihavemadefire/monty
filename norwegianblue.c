@@ -66,6 +66,7 @@ void get_command(stack_t **head, char *opr, unsigned int i)
 		{"div", dive},
 		{"mul", mul},
 		{"mod", mod},
+		{"pchar", pchar},
 		{NULL, NULL}
 	};
 	while (fd[j].opcode != NULL)

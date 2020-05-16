@@ -46,9 +46,11 @@ void add(stack_t **head, unsigned int i);
 void nop(stack_t **head, unsigned int i);
 void weeweesebwian(stack_t *h);
 void prterr1(unsigned int i);
+void prterr2(unsigned int i);
 void camelot(char *str, unsigned int i);
 void sub(stack_t **head, unsigned int i);
 void dive(stack_t **head, unsigned int i);
 void mul(stack_t **head, unsigned int i);
 void mod(stack_t **head, unsigned int i);
+void pchar(stack_t **head, unsigned int i);
 #endif
