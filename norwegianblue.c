@@ -62,6 +62,10 @@ void get_command(stack_t **head, char *opr, unsigned int i)
 		{"swap", swap},
 		{"add", add},
 		{"nop", nop},
+		{"sub", sub},
+		{"div", div},
+		{"mul", mul},
+		{"mod", mod},
 		{NULL, NULL}
 	};
 	while (fd[j].opcode != NULL)
