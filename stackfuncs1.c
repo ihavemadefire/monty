@@ -46,7 +46,7 @@ void sub(stack_t **head, unsigned int i)
 		exit(EXIT_FAILURE);
 	}
 	new = *head;
-	temp = new->n - new->next->n;
+	temp = new->next->n - new->n;
 	pop(head, i);
 	new = *head;
 	new->n = temp;
