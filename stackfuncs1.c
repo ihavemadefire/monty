@@ -42,7 +42,7 @@ void sub(stack_t **head, unsigned int i)
 
 	if (*head == NULL || (*head)->next == NULL)
 	{
-		fprintf(stderr, "L%u: can't add, stack too short\n", i);
+		fprintf(stderr, "L%u: can't sub, stack too short\n", i);
 		exit(EXIT_FAILURE);
 	}
 	new = *head;
@@ -63,7 +63,7 @@ void mul(stack_t **head, unsigned int i)
 
 	if (*head == NULL || (*head)->next == NULL)
 	{
-		fprintf(stderr, "L%u: can't add, stack too short\n", i);
+		fprintf(stderr, "L%u: can't mul, stack too short\n", i);
 		exit(EXIT_FAILURE);
 	}
 	new = *head;
@@ -84,11 +84,16 @@ void mod(stack_t **head, unsigned int i)
 
 	if (*head == NULL || (*head)->next == NULL)
 	{
-		fprintf(stderr, "L%u: can't add, stack too short\n", i);
+		fprintf(stderr, "L%u: can't mod, stack too short\n", i);
 		exit(EXIT_FAILURE);
 	}
 	new = *head;
-	temp = new->n % new->next->n;
+	if (new->n == 0)
+	{
+		fprintf(stderr, "L%u: division by zero\n", i);
+		exit(EXIT_FAILURE);
+	}
+	temp = new->next->n % new->n;
 	pop(head, i);
 	new = *head;
 	new->n = temp;
