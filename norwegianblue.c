@@ -63,7 +63,7 @@ void get_command(stack_t **head, char *opr, unsigned int i)
 		{"add", add},
 		{"nop", nop},
 		{"sub", sub},
-		{"div", div},
+		{"div", dive},
 		{"mul", mul},
 		{"mod", mod},
 		{NULL, NULL}
