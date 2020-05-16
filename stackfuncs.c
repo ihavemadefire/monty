@@ -103,12 +103,12 @@ void swap(stack_t **head, unsigned int i)
 	stack_t *new;
 	int temp;
 
-	new = *head;
-	if (new->next == NULL || new->next->next == NULL)
+	if (*head == NULL || (*head)->next == NULL)
 	{
 		fprintf(stderr, "L%u: can't swap, stack too short\n", i);
 		exit(EXIT_FAILURE);
 	}
+	new = *head;
 	temp = new->n;
 	new->n = new->next->n;
 	new->next->n = temp;
