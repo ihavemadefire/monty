@@ -9,17 +9,20 @@ void rotl(stack_t **head, __attribute__((unused)) unsigned int i)
 	stack_t *new;
 	stack_t *temp;
 
-	new = *head;
-	temp = *head;
-	*head = (*head)->next;
-	(*head)->prev = NULL;
-	while (temp->next != NULL)
+	if (*head && (*head)->next)
 	{
-		temp = temp->next;
+		new = *head;
+		temp = *head;
+		*head = (*head)->next;
+		(*head)->prev = NULL;
+		while (temp->next != NULL)
+		{
+			temp = temp->next;
+		}
+		temp->next = new;
+		new->next = NULL;
+		new->prev = temp;
 	}
-	temp->next = new;
-	new->next = NULL;
-	new->prev = temp;
 }
 /**
  * rotr - Rotates ll to the right
