@@ -54,7 +54,7 @@ void pchar(stack_t **head, unsigned int i)
  * @head: Passed head
  * @i: Passed line number
  */
-void pstr(stack_t **head,__attribute__((unused))unsigned int i)
+void pstr(stack_t **head, __attribute__((unused))unsigned int i)
 {
 	stack_t *new;
 	char buff[128];
