@@ -34,15 +34,18 @@ void rotr(stack_t **head, __attribute__((unused)) unsigned int i)
 	stack_t *new;
 	stack_t *temp;
 
-	temp = *head;
-	while (temp->next != NULL)
+	if (*head && (*head)->next)
 	{
-		temp = temp->next;
+		temp = *head;
+		while (temp->next != NULL)
+		{
+			temp = temp->next;
+		}
+		new = temp;
+		temp->prev->next = NULL;
+		new->prev = NULL;
+		new->next = *head;
+		(*head)->prev = new;
+		*head = new;
 	}
-	new = temp;
-	temp->prev->next = NULL;
-	new->prev = NULL;
-	new->next = *head;
-	(*head)->prev = new;
-	*head = new;
 }
