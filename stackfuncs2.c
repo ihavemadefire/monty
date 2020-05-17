@@ -6,7 +6,7 @@
  */
 void dive(stack_t **head, unsigned int i)
 {
-	stack_t *new;
+	stack_t *new = NULL;
 	int temp;
 
 	if (*head == NULL || (*head)->next == NULL)
@@ -26,7 +26,7 @@ void dive(stack_t **head, unsigned int i)
 	new->n = temp;
 }
 /**
- * pchar - divides top two elements of stack
+ * pchar - prints char at top of stack
  * @head: Passed head
  * @i: Passed line number
  */
@@ -48,4 +48,29 @@ void pchar(stack_t **head, unsigned int i)
 	{
 		prterr2(i);
 	}
+}
+/**
+ * pstr -  aggregates chars into string and prints them
+ * @head: Passed head
+ * @i: Passed line number
+ */
+void pstr(stack_t **head,__attribute__((unused))unsigned int i)
+{
+	stack_t *new;
+	char buff[128];
+	int j = 0;
+
+	new = *head;
+	while (new)
+	{
+		if (new->n <= 0 || new->n >= 127  || new->n == 0)
+		{
+			break;
+		}
+		buff[j] = new->n;
+		j++;
+		new = new->next;
+	}
+	buff[j] = '\n';
+	printf("%s", buff);
 }

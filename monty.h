@@ -53,4 +53,7 @@ void dive(stack_t **head, unsigned int i);
 void mul(stack_t **head, unsigned int i);
 void mod(stack_t **head, unsigned int i);
 void pchar(stack_t **head, unsigned int i);
+void pstr(stack_t **head, unsigned int i);
+void rotl(stack_t **head, unsigned int i);
+void rotr(stack_t **head, unsigned int i);
 #endif
