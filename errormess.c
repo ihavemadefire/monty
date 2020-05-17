@@ -5,8 +5,8 @@
  */
 void prterr1(unsigned int i)
 {
-        fprintf(stderr, "L%u: usage: push integer\n", i);
-        exit(EXIT_FAILURE);
+	fprintf(stderr, "L%u: usage: push integer\n", i);
+	exit(EXIT_FAILURE);
 }
 /**
  * prterr2 - print error

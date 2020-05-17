@@ -23,7 +23,7 @@ void spam(char *its, stack_t **head)
 	while (fgets(buff, sizeof(buff), fp) != NULL)
 	{
 		opr = strtok(buff, " ");
-		if (*opr != 10)
+		if (*opr != 10 && *opr != 35)
 		{
 			if (strcmp(opr, "push") == 0)
 			{
