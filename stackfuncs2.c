@@ -57,7 +57,7 @@ void pchar(stack_t **head, unsigned int i)
 void pstr(stack_t **head, __attribute__((unused))unsigned int i)
 {
 	stack_t *new;
-	char buff[128];
+	char buff[128] = {0};
 	int j = 0;
 
 	new = *head;
