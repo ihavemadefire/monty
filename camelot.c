@@ -10,11 +10,16 @@ void camelot(char *str, unsigned int i)
 
 	if (str[0] == 45)
 		j++;
-	for (; str[j] != '\n'; j++)
+	while (str[j] != '\n')
 	{
-		if (str[j] < 48 || str[j] > 57)
+		if (str[j] != ' ')
+		{
+			break;
+		}
+		else if (str[j] < 48 || str[j] > 57)
 		{
 			prterr1(i);
 		}
+		j++;
 	}
 }

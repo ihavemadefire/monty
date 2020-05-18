@@ -30,7 +30,9 @@ void spam(char *its, stack_t **head)
 				num = strtok(NULL, " ");
 				/*validate not null and is int*/
 				if (*num == 10)
+				{
 					prterr1(i);
+				}
 				camelot(num, i);
 				remove_endOfLine(num);
 				numint = atoi(num);
@@ -98,6 +100,8 @@ void remove_endOfLine(char *line)
 	int i = 0;
 
 	while (line[i] != '\n')
+	{
 		i++;
+	}
 	line[i] = '\0';
 }
